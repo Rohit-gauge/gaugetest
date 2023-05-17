@@ -1,30 +1,28 @@
-import React, { lazy, Suspense } from "react";
-import "../../assets/css/homepage.css";
+import React from "react";
+import "../../assets/css/homepage.css"
+import Affordable from "../../components/Home/Affordable";
+import CustomerNeed from "../../components/Home/CustomerNeed";
+import Experience from "../../components/Home/Experience";
+import Faq from "../../components/Home/Faq";
+import Gurantee from "../../components/Home/Gurantee";
+import HealthAbove from "../../components/Home/HealthAbove";
 import Landing from "../../components/Home/Landing";
+import MainTable from "../../components/Home/MainTable";
+import PureWater from "../../components/Home/PureWater";
 
-const Affordable = lazy(() => import("../../components/Home/Affordable"));
-const CustomerNeed = lazy(() => import("../../components/Home/CustomerNeed"));
-const Experience = lazy(() => import("../../components/Home/Experience"));
-const Faq = lazy(() => import("../../components/Home/Faq"));
-const Gurantee = lazy(() => import("../../components/Home/Gurantee"));
-const HealthAbove = lazy(() => import("../../components/Home/HealthAbove"));
-const MainTable = lazy(() => import("../../components/Home/MainTable"));
-const PureWater = lazy(() => import("../../components/Home/PureWater"));
 
 const HomePage = () => {
   return (
     <div>
       <Landing />
-      <Suspense fallback={null}>
-        <CustomerNeed />
-        <PureWater />
-        <Gurantee />
-        <HealthAbove />
-        <Experience />
-        <MainTable />
-        <Affordable />
-        <Faq />
-      </Suspense>
+      <CustomerNeed />
+      <PureWater />
+      <Gurantee />
+      <HealthAbove />
+      <Experience />
+      <MainTable />
+      <Affordable />
+      <Faq />
     </div>
   );
 };
