@@ -1,43 +1,16 @@
 import React, { useEffect, useCallback } from "react";
 import "../../assets/css/homepage.css";
 const Landing = () => {
-  const desktopImageUrl =
-    "https://ik.imagekit.io/aq3ybtarw/landing/lg-landing.webp?updatedAt=1684337971125";
-  const mobileImageUrl =
-    "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
+ 
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 1028;
-    const imageToPreload = new Image();
-    imageToPreload.src = isMobile ? mobileImageUrl : desktopImageUrl;
-  }, []);
-
-  const scrollToNextSection = useCallback(() => {
-    const nextSection = document.querySelector("#next-section");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
-
+ 
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto  lg:pt-16 pt-10">
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-              <div className="lg:w-full w-full flex justify-center">
-                <img
-                  src={desktopImageUrl}
-                  alt="hero"
-                  className={`object-cover relative object-center rounded-3xl transition-transform duration-300 ease-in-out hover:-translate-y-2 max-w-full cursor-pointer landing-image `}
-                  key="desktop-image"
-                  fetchpriority="high"
-                />
-              </div>
+              test
               <div className="lg:col-span-1">
                 <div className="landing-widget-container mx-auto    lg:py-4 ">
                   <h1 className="rt-textappear-line70 text-center rt-textappear-line ml1 rt_gradient mb-5 xl:mb-2 sm:mt-10">
