@@ -6,9 +6,16 @@ const Landing = () => {
   const mobileImageUrl =
     "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
 
+    const isMobile = useMemo(() => window.innerWidth <= 1028, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const imageToPreload = new Image();
+    imageToPreload.src = isMobile ? mobileImageUrl : desktopImageUrl;
+  }, [isMobile]);
 
   const scrollToNextSection = useCallback(() => {
     const nextSection = document.querySelector("#next-section");
@@ -17,10 +24,13 @@ const Landing = () => {
     }
   }, []);
 
-  const isMobile = useMemo(() => window.innerWidth <= 1028, []);
+
 
   return (
     <>
+      <head>
+        <link rel="preload" as="image" href={isMobile ? mobileImageUrl : desktopImageUrl} />
+      </head>
       <section className="landing-page">
         <div className="xl:container mx-auto  lg:pt-16 pt-10">
           <div className="text-gray-600 body-font">
@@ -33,7 +43,6 @@ const Landing = () => {
                     className={`object-cover relative object-center rounded-3xl transition-transform duration-300 ease-in-out hover:-translate-y-2 max-w-full cursor-pointer landing-image `}
                     key={isMobile ? "mobile-image" : "desktop-image"}
                     fetchpriority="high"
-                    
                   />
                 </div>
                 <div className="lg:col-span-1">
