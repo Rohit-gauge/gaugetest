@@ -1,13 +1,15 @@
 import React from "react";
 import "../../assets/css/homepage.css";
 const Landing = () => {
+ 
+
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto  lg:pt-16 pt-10">
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-              <div className="lg:w-full w-full flex justify-center">hi</div>
+             hi
               <div className="lg:col-span-1">
                 <div className="landing-widget-container mx-auto    lg:py-4 ">
                   <h1 className="rt-textappear-line70 text-center rt-textappear-line ml1 rt_gradient mb-5 xl:mb-2 sm:mt-10">
@@ -28,7 +30,7 @@ const Landing = () => {
 
                 <div className="flex flex-col justify-center items-center mx-auto relative ">
                   <button
-                    onClick={scrollToNextSection}
+                    
                     className="inline-flex text-white focus:outline-none  border-1 rounded-full bg-blue-500 hover:bg-blue-600 py-4 lg:py-5 px-12 mb-7 text-base font-semibold"
                   >
                     Take a product Tour
