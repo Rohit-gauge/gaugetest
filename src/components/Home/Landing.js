@@ -1,5 +1,6 @@
-import React, {useCallback, useEffect} from "react";
+import React, { useCallback, useEffect } from "react";
 import "../../assets/css/homepage.css";
+
 const Landing = () => {
   const scrollToNextSection = useCallback(() => {
     const nextSection = document.querySelector("#next-section");
@@ -14,7 +15,6 @@ const Landing = () => {
       "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
   }, []);
 
-
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto  lg:pt-16 pt-10">
@@ -22,6 +22,7 @@ const Landing = () => {
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
               <div className="lg:w-full w-full flex justify-center">
+             
                 <img
                   src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
                   alt="hero-img"
