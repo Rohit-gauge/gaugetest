@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: gaugeFont;
-  src: url("./assets/fonts/psfont.ttf");
-  font-display: swap;
-}
+
 
 * {
   box-sizing: border-box;
@@ -25,97 +21,3 @@ body {
   overflow-x: hidden;
 }
 
-.landing-page {
-  background-image: url("./assets/images/gauge/landing-bg.webp");
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.landing-widget-container h1 {
-  color: #fff;
-  font-size: 3.75em;
-  font-weight: 600 !important;
-  line-height: 1.25;
-  text-transform: capitalize;
-}
-.landing-image {
-  max-width: 80%;
-}
-
-.landing-icon svg {
-  width: 1em;
-  height: 1em;
-  position: relative;
-  display: block;
-}
-
-.letters {
-  display: inline-block;
-  position: relative;
-  background: linear-gradient(to right, #d73365 0%, #fea063 100%);
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-}
-
-.landing-widget-container h1 {
-  font-weight: bolder;
-  line-height: 1.35;
-}
-
-.landing-page .hamburger-icon {
-  color: #fff;
-}
-
-.card-more {
-  border-radius: 40px 40px 40px 40px;
-  padding: 60px 40px;
-  background-color: #fff;
-}
-
-.card-more:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-}
-
-.card-more-sd {
-  box-shadow: 0 10px 15px -3px rgba(232, 187, 187, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1);
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .right-44 {
-    right: 2rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .landing-image {
-    width: 80%;
-  }
-}
-
-@media (max-width: 767px) {
-  .landing-widget-container h1 {
-    font-weight: 600 !important;
-    text-transform: capitalize;
-    font-weight: 700 !important;
-    text-transform: capitalize;
-    font-size: 2.5em;
-    color: #fff;
-  }
-}
-@media (min-width: 1024px) {
-  link[rel="preload"][as="image"] {
-    fetchpriority: high;
-  }
-}
