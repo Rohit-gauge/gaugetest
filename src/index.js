@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import criticalCSS from "./index.css";
+import App from "./App";
 
 function loadCriticalCSS() {
   const styleTag = document.createElement("style");
