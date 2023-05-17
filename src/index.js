@@ -1,7 +1,7 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import App from "./App";
 import criticalCSS from "./index.css";
-import ReactDOM from "react-dom";
 
 function loadCriticalCSS() {
   const styleTag = document.createElement("style");
@@ -9,7 +9,11 @@ function loadCriticalCSS() {
   document.head.appendChild(styleTag);
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
 loadCriticalCSS();
-root.render(<App />);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
