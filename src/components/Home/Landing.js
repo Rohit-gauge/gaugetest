@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-
+import "../../assets/css/homepage.css";
 const Landing = () => {
   const desktopImageUrl =
     "https://ik.imagekit.io/aq3ybtarw/landing/lg-landing.webp?updatedAt=1684337971125";

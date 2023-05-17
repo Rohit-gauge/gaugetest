@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from "react";
-import "../../assets/css/homepage.css";
 import Landing from "../../components/Home/Landing";
 
 const Affordable = lazy(() => import("../../components/Home/Affordable"));

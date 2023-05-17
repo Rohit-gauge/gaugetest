@@ -1,3 +1,46 @@
+.landing-page {
+  background-image: url("https://ik.imagekit.io/aq3ybtarw/gauge/data-visualization-Software-banner-bg-1024x540__1_.webp?updatedAt=1683749384227");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.landing-widget-container h1 {
+  color: #fff;
+  font-size: 3.75em;
+  font-weight: 600 !important;
+  line-height: 1.25;
+  text-transform: capitalize;
+}
+.landing-image {
+  max-width: 80%;
+}
+
+.landing-icon svg {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: block;
+}
+
+.letters {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(to right, #d73365 0%, #fea063 100%);
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-widget-container h1 {
+  font-weight: bolder;
+  line-height: 1.35;
+}
+
+
+
+.landing-page .hamburger-icon {
+  color: #fff;
+}
 
 .gurantee {
   background-image: url("https://ik.imagekit.io/aq3ybtarw/gauge/sec3-bg-scaled.webp?updatedAt=1683733189809");
@@ -624,6 +667,22 @@ footer {
   }
 }
 
+@media (min-width: 1200px) {
+  .landing-image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing-widget-container h1 {
+    font-weight: 600 !important;
+    text-transform: capitalize;
+    font-weight: 700 !important;
+    text-transform: capitalize;
+    font-size: 2.5em;
+    color: #fff;
+  }
+}
 
 
  

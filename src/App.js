@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Home/Nav";
 import HomePage from "./pages/HomePage/HomePage";
-
 import About from "./pages/AboutPage/About";
 import Contact from "./pages/ContactPage/Contact";
 
