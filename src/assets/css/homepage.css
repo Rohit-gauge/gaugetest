@@ -306,6 +306,25 @@
   color: #ff5f55;
 }
 
+.my-custom-class {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3rem;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.my-custom-class:hover {
+  transform: translateY(-2px);
+}
+
+.my-custom-class-max-width {
+  max-width: 100%;
+}
+
+
 .exp-info {
   font-weight: 500 !important;
   text-transform: none;
