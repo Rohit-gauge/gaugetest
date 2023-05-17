@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, {useCallback, useEffect} from "react";
 import "../../assets/css/homepage.css";
 const Landing = () => {
   const scrollToNextSection = useCallback(() => {
