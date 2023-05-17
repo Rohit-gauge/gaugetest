@@ -6,6 +6,8 @@ import criticalCSS from "./index.css";
 function loadCriticalCSS() {
   const styleTag = document.createElement("style");
   styleTag.innerHTML = criticalCSS;
+  styleTag.rel = "preload";
+  styleTag.as = "style";
   document.head.appendChild(styleTag);
 }
 

@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
-import "../../assets/css/About.css"
+import React, { useEffect, lazy, Suspense } from "react";
+import "../../assets/css/About.css";
+
 import OurCompany from "./OurCompany";
-import KnowMore from "./KnowMore";
-import CoFounder from "./CoFounder";
-import OurStory from "./OurStory";
-import Team from "./Team";
+
+const KnowMore = lazy(() => import("./KnowMore"));
+const CoFounder = lazy(() => import("./CoFounder"));
+const OurStory = lazy(() => import("./OurStory"));
+const Team = lazy(() => import("./Team"));
 
 const About = () => {
   useEffect(() => {
@@ -14,10 +16,12 @@ const About = () => {
   return (
     <>
       <OurCompany />
-      <KnowMore />
-      <CoFounder />
-      <OurStory />
-      <Team />
+      <Suspense fallback={null}>
+        <KnowMore />
+        <CoFounder />
+        <OurStory />
+        <Team />
+      </Suspense>
     </>
   );
 };

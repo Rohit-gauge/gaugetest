@@ -12,6 +12,7 @@ const Footer = () => {
         <img
           src="https://ik.imagekit.io/aq3ybtarw/gauge/vector-line__1_.webp?updatedAt=1682802954923"
           alt="curvimage"
+         
         />
       </div>
 
