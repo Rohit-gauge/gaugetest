@@ -8,6 +8,13 @@ const Landing = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const image = new Image();
+    image.src =
+      "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
+  }, []);
+
+
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto  lg:pt-16 pt-10">
