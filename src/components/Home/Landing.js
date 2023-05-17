@@ -1,7 +1,17 @@
 import React from "react";
 import "../../assets/css/homepage.css";
 const Landing = () => {
- 
+  React.useEffect(() => {
+    const image = new Image();
+    image.src =
+      "https://ik.imagekit.io/aq3ybtarw/gauge/data-visualization-Software-banner-bg-1024x540__1_.webp?updatedAt=1683749384227";
+    image.onload = () => {
+      
+      document.getElementById(
+        "landing-page"
+      ).style.backgroundImage = `url(${image.src})`;
+    };
+  }, []);
 
   return (
     <section className="landing-page">
@@ -9,11 +19,8 @@ const Landing = () => {
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-            <div className="lg:w-full w-full flex justify-center">
-                <img
-                  src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
-                  
-                />
+              <div className="lg:w-full w-full flex justify-center">
+                <img src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244" />
               </div>
               <div className="lg:col-span-1">
                 <div className="landing-widget-container mx-auto    lg:py-4 ">
@@ -34,10 +41,7 @@ const Landing = () => {
                 </p>
 
                 <div className="flex flex-col justify-center items-center mx-auto relative ">
-                  <button
-                    
-                    className="inline-flex text-white focus:outline-none  border-1 rounded-full bg-blue-500 hover:bg-blue-600 py-4 lg:py-5 px-12 mb-7 text-base font-semibold"
-                  >
+                  <button className="inline-flex text-white focus:outline-none  border-1 rounded-full bg-blue-500 hover:bg-blue-600 py-4 lg:py-5 px-12 mb-7 text-base font-semibold">
                     Take a product Tour
                   </button>
                   <p className="leading-relaxed text-center  font-medium text-base    mt-4 customer-para-two ">
