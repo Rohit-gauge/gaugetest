@@ -1,18 +1,6 @@
 import React from "react";
 import "../../assets/css/homepage.css";
 const Landing = () => {
-  React.useEffect(() => {
-    const image = new Image();
-    image.src =
-      "https://ik.imagekit.io/aq3ybtarw/gauge/data-visualization-Software-banner-bg-1024x540__1_.webp?updatedAt=1683749384227";
-    image.onload = () => {
-      
-      document.getElementById(
-        "landing-page"
-      ).style.backgroundImage = `url(${image.src})`;
-    };
-  }, []);
-
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto  lg:pt-16 pt-10">
