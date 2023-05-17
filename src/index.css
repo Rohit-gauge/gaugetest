@@ -21,7 +21,6 @@ p {
 }
 
 body {
-  background-color: gray;
   margin: 0;
   overflow-x: hidden;
 }
@@ -59,7 +58,6 @@ input[type="number"]::-webkit-inner-spin-button {
   z-index: 70;
 }
 
-
 .space-y-1 {
   display: flex;
   flex-direction: column;
@@ -88,4 +86,3 @@ input[type="number"] {
     right: 2rem;
   }
 }
-
