@@ -7,7 +7,9 @@ const Landing = () => {
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-            test
+              <div className="lg:w-full w-full flex justify-center">
+                <img src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244" alt="hero-img" />
+              </div>
               <div className="lg:col-span-1">
                 <div className="landing-widget-container mx-auto    lg:py-4 ">
                   <h1 className="rt-textappear-line70 text-center rt-textappear-line ml1 rt_gradient mb-5 xl:mb-2 sm:mt-10">
