@@ -3,10 +3,10 @@ import "../../assets/css/About.css";
 
 import OurCompany from "./OurCompany";
 
-const KnowMore = lazy(() => import("./KnowMore"));
-const CoFounder = lazy(() => import("./CoFounder"));
-const OurStory = lazy(() => import("./OurStory"));
-const Team = lazy(() => import("./Team"));
+const LazyKnowMore = lazy(() => import("./KnowMore"));
+const LazyCoFounder = lazy(() => import("./CoFounder"));
+const LazyOurStory = lazy(() => import("./OurStory"));
+const LazyTeam = lazy(() => import("./Team"));
 
 const About = () => {
   useEffect(() => {
@@ -17,10 +17,10 @@ const About = () => {
     <>
       <OurCompany />
       <Suspense fallback={null}>
-        <KnowMore />
-        <CoFounder />
-        <OurStory />
-        <Team />
+        <LazyKnowMore />
+        <LazyCoFounder />
+        <LazyOurStory />
+        <LazyTeam />
       </Suspense>
     </>
   );

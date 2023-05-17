@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import Form from "./Form";
-import "../../assets/css/contact.css"
+import React, { useEffect, lazy, Suspense } from "react";
+import "../../assets/css/contact.css";
+
+const LazyForm = lazy(() => import("./Form"));
 
 const Contact = () => {
   useEffect(() => {
@@ -9,7 +10,9 @@ const Contact = () => {
 
   return (
     <>
-      <Form />
+      <Suspense fallback={null}>
+        <LazyForm />
+      </Suspense>
     </>
   );
 };

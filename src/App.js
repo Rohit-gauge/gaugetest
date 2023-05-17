@@ -1,14 +1,15 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Home/Nav";
-import Footer from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const Terms = lazy(() => import("./pages/terms&condition/Index"));
 const Privacy = lazy(() => import("./pages/privacy/Index"));
-const ChatBot = lazy(() => import("../src/components/whatsapp/index"));
 const About = lazy(() => import("./pages/AboutPage/About"));
 const Contact = lazy(() => import("./pages/ContactPage/Contact"));
+
+const LazyChatBot = lazy(() => import("../src/components/whatsapp/index"));
+const LazyFooter = lazy(() => import("./components/Footer/Footer"));
 
 function App() {
   const logo = "https://ik.imagekit.io/aq3ybtarw/gauge/logo_gauge_red.png?updatedAt=1683741657958";
@@ -26,8 +27,12 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </Suspense>
-      <ChatBot />
-      <Footer />
+      <Suspense fallback={null}>
+        <LazyChatBot />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LazyFooter />
+      </Suspense>
     </Router>
   );
 }
