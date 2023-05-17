@@ -1,5 +1,6 @@
 .landing-page {
-  background-image: url("https://ik.imagekit.io/aq3ybtarw/gauge/data-visualization-Software-banner-bg-1024x540__1_.webp?updatedAt=1683749384227");
+  /* background-image: url("https://ik.imagekit.io/aq3ybtarw/gauge/data-visualization-Software-banner-bg-1024x540__1_.webp?updatedAt=1683749384227"); */
+  background-color: blue;
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;

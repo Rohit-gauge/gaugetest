@@ -12,10 +12,7 @@ const Landing = () => {
             <div className="lg:w-full w-full flex justify-center">
                 <img
                   src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
-                  alt="hero"
-                  className={`object-cover relative object-center rounded-3xl transition-transform duration-300 ease-in-out hover:-translate-y-2 max-w-full cursor-pointer landing-image `}
-                  key="desktop-image"
-                  fetchpriority="high"
+                  
                 />
               </div>
               <div className="lg:col-span-1">
