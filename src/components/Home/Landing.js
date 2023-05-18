@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import "../../assets/css/homepage.css";
 
 const Landing = () => {
@@ -9,30 +9,6 @@ const Landing = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            observer.unobserve(img);
-          }
-        });
-      },
-      { rootMargin: "0px 0px 200px 0px" } // Adjust the rootMargin to control when the image starts loading
-    );
-
-    const images = document.querySelectorAll(".lazyload");
-    images.forEach((image) => {
-      observer.observe(image);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <section className="landing-page">
       <div className="xl:container mx-auto lg:pt-16 pt-10">
@@ -41,13 +17,12 @@ const Landing = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
               <div className="lg:w-full w-full mx-auto">
                 <img
-                  src=""
+                  src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
                   alt="hero-img"
                   fetchpriority="high"
-                  className="my-custom-class flex m-auto lazyload"
-                  data-src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
+                  className="my-custom-class flex m-auto"
                   width={550}
-                  decoding="async"
+                  loading="lazy"
                 />
               </div>
 
