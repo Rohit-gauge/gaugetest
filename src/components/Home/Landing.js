@@ -28,7 +28,8 @@ const Landing = () => {
                   src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
                   alt="hero-img"
                   fetchpriority="high"
-                  className="my-custom-class"
+                  className="my-custom-class flex m-auto"
+                  width={550}
                  />
                
               </div>
