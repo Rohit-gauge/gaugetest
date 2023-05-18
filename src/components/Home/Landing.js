@@ -23,22 +23,14 @@ const Landing = () => {
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-              <div className="lg:w-full w-full flex justify-center">
-                {/* <img
+              <div className="lg:w-full w-full mx-auto hidden md:block">
+                <img
                   src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
                   alt="hero-img"
                   fetchpriority="high"
                   className="my-custom-class"
-                  srcSet="
-                    https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244&h=400 400w,
-                    https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244&h=800 800w,
-                    https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244&h=1200 1200w
-                  "
-                  sizes="(max-width: 300px) 400px,
-                         (max-width: 900px) 800px,
-                         1200px"
-                /> */}
-                hi
+                 />
+               
               </div>
 
               <div className="lg:col-span-1">
