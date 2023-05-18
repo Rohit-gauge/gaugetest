@@ -10,13 +10,27 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
-    const preloadImage = () => {
-      const image = new Image();
-      image.src =
-        "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
+        });
+      },
+      { rootMargin: "0px 0px 200px 0px" } // Adjust the rootMargin to control when the image starts loading
+    );
 
-    preloadImage();
+    const images = document.querySelectorAll(".lazyload");
+    images.forEach((image) => {
+      observer.observe(image);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
