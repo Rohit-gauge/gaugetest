@@ -34,7 +34,7 @@ const Landing = () => {
               </div>
 
               <div className="lg:col-span-1">
-                <div className="landing-widget-container mx-auto    lg:py-4 ">
+                <div className="landing-widget-container mx-auto    lg:py-4 mt-6 md:mt-0">
                   <h1 className="rt-textappear-line70 text-center rt-textappear-line ml1 rt_gradient mb-5 xl:mb-2 sm:mt-10">
                     Gauge Water Purifier{" "}
                     <span className="rt-heading-div">
