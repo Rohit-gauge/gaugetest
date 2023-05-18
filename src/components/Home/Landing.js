@@ -1,17 +1,20 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import "../../assets/css/homepage.css";
+
+const preloadImage = () => {
+  const image = new Image();
+  image.src =
+    "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
+};
+
+preloadImage();
+
 const Landing = () => {
   const scrollToNextSection = useCallback(() => {
     const nextSection = document.querySelector("#next-section");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
-  }, []);
-
-  useEffect(() => {
-    const image = new Image();
-    image.src =
-      "https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244";
   }, []);
 
   return (
