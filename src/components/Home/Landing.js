@@ -23,7 +23,7 @@ const Landing = () => {
         <div className="text-gray-600 body-font">
           <div className="lg:mx-auto flex flex-row px-5  pb-24 text-center ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
-              <div className="lg:w-full w-full mx-auto hidden md:block">
+              <div className="lg:w-full w-full mx-auto">
                 <img
                   src="https://ik.imagekit.io/aq3ybtarw/landing/mobile-landing.webp?updatedAt=1680626119244"
                   alt="hero-img"
