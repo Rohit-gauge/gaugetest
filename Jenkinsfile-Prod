@@ -1,0 +1,63 @@
+pipeline {
+    agent any
+
+    environment {
+        LOCAL_WORKSPACE_DIR = "/var/lib/jenkins/workspace/gauge-web-frontend-prod"
+        BUILD_ARCHIVE_NAME = "gauge-frontend-prod.zip"
+        LOCAL_ARCHIVE_LOC = "/var/lib/jenkins/workspace/gauge-web-frontend-prod/gauge-frontend-prod.zip"
+        REMOTE_AGENT_USER = "ubuntu"
+        REMOTE_AGENT_HOST = "43.204.57.78"
+        REMOTE_TARGET_DIR = "/home/ubuntu/builds"
+        REMOTE_NGINX_DIR = "/var/www/html"
+        
+    }
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Build App'){
+            steps{
+                sh 'CI=false npm run build'
+            }
+        }
+        stage('Archive the build'){
+            steps{
+                sh '''
+                cd ${LOCAL_WORKSPACE_DIR}
+                zip -r ${BUILD_ARCHIVE_NAME} build/
+                '''
+            }
+        }
+        stage('Transfer build to Production Server'){
+            steps{
+                sh 'scp -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa ${LOCAL_ARCHIVE_LOC} ${REMOTE_AGENT_USER}@${REMOTE_AGENT_HOST}:${REMOTE_TARGET_DIR}'
+            }
+        }
+        stage('Deploy'){
+        agent {label 'GAUGE-LS-PROD'}       
+            steps{
+                sh '''
+                cd ${REMOTE_TARGET_DIR}
+                sudo unzip -o ${BUILD_ARCHIVE_NAME} -d ${REMOTE_NGINX_DIR}
+                sudo systemctl restart nginx
+                '''
+            }
+        }  
+        
+    }
+     post {
+            always {
+                slackSend color: "#FFFF00", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+            }
+            success {
+                slackSend color: "#00FF00", message: "Build deployed successfully - For Job Name - ${env.JOB_NAME} - Build Number ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+            }
+            failure {
+                slackSend failOnError:true, color: "#FF0000", message:"Build failed  - For Job Name - ${env.JOB_NAME} - Build Number ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+            }
+        }
+}
+

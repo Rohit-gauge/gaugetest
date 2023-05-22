@@ -1,15 +1,13 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Home/Nav";
 import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/AboutPage/About";
 import Contact from "./pages/ContactPage/Contact";
-
-const Terms = lazy(() => import("./pages/terms&condition/Index"));
-const Privacy = lazy(() => import("./pages/privacy/Index"));
-
-const LazyChatBot = lazy(() => import("../src/components/whatsapp/index"));
-const LazyFooter = lazy(() => import("./components/Footer/Footer"));
+import Terms from "./pages/terms&condition/Index";
+import Privacy from "./pages/privacy/Index";
+import LazyChatBot from "../src/components/whatsapp/index";
+import LazyFooter from "./components/Footer/Footer";
 
 function App() {
   const logo =
@@ -20,21 +18,15 @@ function App() {
   return (
     <Router>
       <Navbar RedLogo={redlogo} Logo={logo} />
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-us" element={<About />} />
-          <Route path="/contact-us-two" element={<Contact />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
-        </Routes>
-      </Suspense>
-      <Suspense fallback={null}>
-        <LazyChatBot />
-      </Suspense>
-      <Suspense fallback={null}>
-        <LazyFooter />
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/contact-us-two" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+      </Routes>
+      <LazyChatBot />
+      <LazyFooter />
     </Router>
   );
 }
